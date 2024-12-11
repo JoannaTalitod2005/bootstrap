@@ -9,6 +9,10 @@
   <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
   
   <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       background: url(bg.jpg);
       background-repeat: no-repeat;
@@ -17,6 +21,13 @@
 
     .navbar {
       height: 70px;
+    }
+    .narbar .nav-link {
+      color:white;
+      transition: color 0.3s ease;
+    }
+    .navbar .nav-link:hover {
+      color: black !important;
     }
 
     h1 {
@@ -35,6 +46,7 @@
     .intro-text {
       font-size: 1.2rem;
       padding-left: 20px;
+      text-align: justify;
     }
 
     .image-container {
@@ -108,11 +120,6 @@
       display: none;
       margin-top: 20px;
     }
-
-
-    html {
-      scroll-behavior: smooth;
-    }
   </style>
 
 </head>
@@ -120,7 +127,7 @@
   <nav class="navbar navbar-expand-sm bg-secondary navbar-dark sticky-top">
     <img src="gato.png" alt="Logo" class="logo-img"> 
     <div class="container">
-      <ul class="nav mx-auto"> 
+      <ul class="nav ms-auto"> 
         <li class="nav-item">
           <a class="nav-link text-light" href="#home">Home</a>
         </li>
@@ -139,7 +146,7 @@
     <div class="row align-items-center">
 
       <div class="col-md-6">
-        <img src="gato.png" alt="Profile Image" class="img-fluid image-container">
+        <img src="asdas.jpg" alt="Profile Image" class="img-fluid image-container">
       </div>
 
 
