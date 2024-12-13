@@ -1,378 +1,485 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <title>Portfolio Website</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Portfolio Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #home h2, #home p {
+    color: white;
+    }
+
+    /*sections*/
+    section {
+      min-height: 100vh;
+      padding: 5em 10%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    section:nth-of-type(1) {
+      background-image: url(blackbg.jpg);
+    }
+
+    section:nth-of-type(2) {
+      background-color: #1A1A1A;
+    }
+    section:nth-of-type(3) {
+      background-color: #333333;
+    }
+
+    section:nth-of-type(4) {
+      background-color: #4D4D4D;
+    }
+    section:nth-of-type(5) {
+      background-color: #666666;
+    }
+
+    /*nav*/
+    .navbar {
+      height: 70px;
+    }
+
+    .narbar .nav-link {
+      font-weight: bold;
+      color:white;
+      transition: color 0.3s ease;
+    }
+
+    .navbar .nav-link:hover {
+      font-weight: bold;
+      color: rgb(43, 90, 124) !important;
+    }
+
+    .logo-img {
+      width: 10%;
+      height: auto;
+    }
+
+    /*home*/
+    .portfolio-text {
+      font-size: 70px;
+      font-weight: bolder;
+      position: relative; 
+      top: -20%; 
+      padding-left: 50%; 
+    }
+
+    .port {
+      color: rgb(43, 90, 124);
+      font-weight: bold;
+    }
+
+    .intro-text {
+      padding-left: 20px;
+      text-align: justify;
+    }
     
-    <style>
+    h2 {
+      font-size: 50px;
+      font-weight: bold;
+    }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Roboto", sans-serif;
-      }
+    .p1 {
+      font-size: 25px;
+      font-weight: bold;
+      padding-top: 30px;
+    }
 
-      html {
-        scroll-behavior: smooth;
-      }
+    .student {
+      color: rgb(43, 90, 124);
+      font-weight: bold;
+    }
 
-      body {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: url(blackbg.jpg);
-      }
+    /*abt me*/
+    .about {
+      color: rgb(43, 90, 124);
+      font-weight: bold;
+    }
 
-      #home h2, #home p {
+    .aboutme-text {
+      text-align: left;
+      padding-left: 17%;
+      padding-top: 10px;
       color: white;
-      }
+      font-size: 50px;
+      font-weight: bold;
+    }
+    
+    .p2 {
+      font-weight: 400;
+      color: black;
+      text-align: justify; 
+      margin-bottom: 10%;
+      padding-left: 30%;
+      margin-top: 10px;
+      border: 4px solid rgb(43, 90, 124);  
+      background-color: rgb(43, 90, 124); 
+      padding: 30px;
+      border-top-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
 
-      section {
-        min-height: 100vh;
-        padding: 5em 10%;
-        justify-content: center;
-        text-align: center;
-      }
+    .p2:hover {
+      transform: translateY(-10px);
+      background-color: white;
+      color: black;
+    }
 
-      section:nth-of-type(2) {
+    .image-container img {
+      max-width: 120%; 
+      height: auto; 
+    } 
 
-      }
+    .larger-image {
+      width: 150%;
+      height: auto;
+    }
 
-      section:nth-of-type(3) {
-        background-color: #b9bfbc;
-      }
-      section:nth-of-type(4) {
-        background-color: antiquewhite;
-      }
+    /*projects*/
+    .project-card {
+      width: 100%; 
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      border: 3px solid black;
+    }
 
-      .navbar {
-        height: 70px;
-      }
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-      .narbar .nav-link {
-        font-weight: bold;
-        color:white;
-        transition: color 0.3s ease;
-      }
+    .project-card .description {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: rgb(1, 1, 1);
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
 
-      .navbar .nav-link:hover {
-        font-weight: bold;
-        color: rgb(43, 90, 124) !important;
-      }
+    .project-card:hover .description {
+      opacity: 1;
+    }
 
-      .logo-img {
-        width: 11%;
-        height: auto;
-      }
+    .my-projects-container {
+      background-color:white;
+      border: 0px;
+      padding: 30px;
+      border-radius: 12px;
+    }
 
-      .portfolio-text {
-        font-size: 70px;
-        font-weight: bolder;
-        position: relative; 
-        top: -20%; 
-        padding-left: 50%; 
-      }
+    .my-projects {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
 
-      .port {
-        color: rgb(43, 90, 124);
-        font-weight: bold;
-      }
-
-      .intro-text {
-        padding-left: 20px;
-        text-align: justify;
-      }
+    /*contact*/
+    .info {
+      background-color: black;
+      padding: 20px;
+      margin-top: 100px;
+      box-shadow: 0px 10px 5px rgb(30, 31, 31);
+      border-top-right-radius: 80px;
+      border-bottom-left-radius: 80px;
+    }
       
-      h2 {
-        font-size: 50px;
-        font-weight: bold;
-      }
+    .response {
+      display: none;
+      margin-top: 20px;
+    }
 
-      .p1 {
-        font-size: 25px;
-        font-weight: bold;
-        padding-top: 30px;
-      }
+    /*footr*/
+    .social-icons a {
+      color: black;
+      transition: color 0.3s ease;
+    }
 
-      .student {
-        color: rgb(43, 90, 124);
-        font-weight: bold;
-      }
+    .social-icons a:hover {
+      color: #2b5a7c;
+    }
 
-      .about {
-        color: rgb(43, 90, 124);
-        font-weight: bold;
-      }
-      .aboutme-text {
-        text-align: left;
-        padding-left: 17%;
-        padding-top: 10px;
-        color: white;
-        font-size: 50px;
-        font-weight: bold;
+  </style>
 
-        
-      }
-      
-      .p2 {
-        font-weight: 400;
-        color: black;
-        text-align: justify; 
-        margin-bottom: 10%;
-        padding-left: 30%;
-        margin-top: 10px;
-        border: 3px solid rgb(43, 90, 124);  
-        background-color: rgb(43, 90, 124); 
-        padding: 30px;
-        border-top-right-radius: 80px;
-        border-bottom-left-radius: 80px;
-        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-      }
+</head>
+<body>
+  <!--nav_bar-->
+  <nav class="navbar navbar-expand-sm sticky-top">
+    <img src="gatoo.png" alt="Logo" class="logo-img"> 
+    <div class="container">
+      <ul class="nav ms-auto"> 
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#aboutme">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-      .p2:hover {
-        transform: translateY(-10px);
-        background-color: black;
-        color: white;
-      }
+<section>
+<!--home-->
+  <div id="home" class="container mt-5">
+    <div class="portfolio-text text-light"><span class="port">Port</span>folio</div>
+    <div class="row align-items-center">
 
-
-      .image-container img {
-        max-width: 120%; 
-        height: auto; 
-      } 
-
-      .larger-image {
-        width: 150%;
-        height: auto;
-      }
-
-      .project-card {
-        width: 100%; 
-        height: 300px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .project-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .project-card .description {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: rgb(1, 1, 1);
-        padding: 10px;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-      }
-
-      .project-card:hover .description {
-        opacity: 1;
-      }
-
-      .my-projects-container {
-        border: 2px solid #000;
-        padding: 30px;
-        border-radius: 12px;
-      }
-
-      .my-projects {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 30px;
-      }
-
-      .info {
-          background: white;
-          padding: 20px;
-          margin-top: 100px;
-          box-shadow: 0px 10px 5px rgb(30, 31, 31);
-          border-top-right-radius: 80px;
-          border-bottom-left-radius: 80px;
-        }
-        
-      .response {
-        display: none;
-        margin-top: 20px;
-      }
-
-    </style>
-
-  </head>
-  <body>
-    <!--nav_bar-->
-    <nav class="navbar navbar-expand-sm sticky-top">
-      <img src="gatoo.png" alt="Logo" class="logo-img"> 
-      <div class="container">
-        <ul class="nav ms-auto"> 
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#aboutme">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#contact">Contact</a>
-          </li>
-        </ul>
+      <div class="col-md-6">
+        <img src="picc.png" alt="Profile Image" class="img-fluid larger-image">
       </div>
-    </nav>
-
-  <section>
-
-  <!--home-->
-    <div id="home" class="container mt-5">
-      <div class="portfolio-text text-light"><span class="port">Port</span>folio</div>
-      <div class="row align-items-center">
-
-        <div class="col-md-6">
-          <img src="picc.png" alt="Profile Image" class="img-fluid larger-image">
-        </div>
-
-
-        <div class="col-md-6">
-          <div class="intro-text">
-            <h2>Joanna Talitod</h2>
-            <p class="p1"> IT <span class="student">STUDENT</span></p>
-          </div>
+      <div class="col-md-6">
+        <div class="intro-text">
+          <h2>Joanna Talitod</h2>
+          <p class="p1"> IT <span class="student">STUDENT</span></p>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-  </section>
-
-  <section>
-    <!--about me-->
-    <div id="aboutme" class="container mt-5">
-      <div class="row align-items-center">
-        <div class="aboutme-text text-light"><span class="about">About </span>Me</div>
-        <div class="col-md-6 d-flex justify-content-start">
-          <p class="p2">
-            Hi There! My name is Joanna Del D. Talitod, and I am 19 years old. 
-            I am currently pursuing a Bachelor of Science in Information Technology 
-            at St. Peter's College in Iligan City.<br> 
-            <br> 
-            A passionate IT student with 
-            a love for exploring new things. I have experience in several programming 
-            languages, including Java, HTML, CSS, SQL, C, and Bootstrap. I am constantly
-            enhancing my abilities and excited to work on new projects to further expand
-            my knowledge and skills in the field of Information Technology.
-          </p>
-        </div>
-        <div class="col-md-6 d-flex justify-content-end">
-          <img src="pic.png" alt="Image" class="img-fluid larger-image" style="width: 65%; height: auto;">
-        </div>
+<section>
+  <!--about_me-->
+  <div id="aboutme" class="container mt-5">
+    <div class="row align-items-center">
+      <div class="aboutme-text text-light"><span class="about">About </span>Me</div>
+      <div class="col-md-6 d-flex justify-content-start">
+        <p class="p2">
+          Hi There! My name is Joanna Del D. Talitod, and I am 19 years old. 
+          I am currently pursuing a Bachelor of Science in Information Technology 
+          at St. Peter's College in Iligan City.<br> 
+          <br> 
+          A passionate IT student with 
+          a love for exploring new things. I have experience in several programming 
+          languages, including Java, HTML, CSS, SQL, C, and Bootstrap. I am constantly
+          enhancing my abilities and excited to work on new projects to further expand
+          my knowledge and skills in the field of Information Technology.
+        </p>
+      </div>
+      <div class="col-md-6 d-flex justify-content-end">
+        <img src="pic.png" alt="Image" class="img-fluid larger-image" style="width: 65%; height: auto;">
       </div>
     </div>
+  </div>
+</section>
 
+<section>
   <!--skills-->
   <div id="skills" class="container py-5">
-    <div class="text-center my-skills">Skills</div>
-    <div class="my-skills-container">
+    <h1 class="text-center display-4 fw-bold mb-5" style="color: #2b5a7c;">Skills</h1>
+    <div class="row g-5">
+      <!--teck_stack-->
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow bg-light">
+          <h2 class="text-center mb-4" style="color: #2b5a7c;">Technology Stack</h2>
+          <div class="mb-3">
+            <small class="d-block">HTML</small>
+            <div class="progress h-20">
+              <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <small class="d-block">CSS</small>
+            <div class="progress h-20">
+              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <small class="d-block">JavaScript</small>
+            <div class="progress h-20">
+              <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--prog_lang-->
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow bg-light">
+          <h2 class="text-center mb-4" style="color: #2b5a7c;">Programming Languages</h2>
+          <div class="mb-3">
+            <small class="d-block">Java</small>
+            <div class="progress h-20">
+              <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <small class="d-block">SQL</small>
+            <div class="progress h-20">
+              <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <small class="d-block">C</small>
+            <div class="progress h-20">
+              <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--skillz-->
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow bg-light">
+          <h2 class="text-center mb-4" style="color: #2b5a7c;">Soft Skills</h2>
+          <div class="mb-3">
+            <small class="d-block">Communication</small>
+            <div class="progress h-20">
+              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <small class="d-block">Teamwork</small>
+            <div class="progress h-20">
+              <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <small class="d-block">Problem Solving</small>
+            <div class="progress h-20">
+              <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <small class="d-block">Time Management</small>
+            <div class="progress h-20">
+              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <!--projects-->
+  <div id="projects" class="container py-5">
+    <h1 class="text-center display-4 fw-bold mb-5" style="color: white;">Projects</h1>
+    <div class="my-projects-container">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-  
-  </section>
-
-  <section>
-    <!--projects-->
-    <div id="projects" class="container py-5">
-      <div class="text-center my-projects">My Projects</div>
-      <div class="my-projects-container">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-          <!-- proj 1 -->
-          <div class="col">
-            <a href="https://weather-update-ur62-7tcxl79t9-joannas-projects-65cffc7a.vercel.app/" target="_blank" class="text-decoration-none">
-              <div class="card project-card">
-                <img src="weather.png" alt="Project 1">
-                <div class="description" style="color: white;">
-                  <h5>Weather Update</h5>
-                  <p>Checks real-time weather updates in Iligan City.</p>
-                </div>
+        <!--proj_1-->
+        <div class="col">
+          <a href="https://weather-update-ur62-7tcxl79t9-joannas-projects-65cffc7a.vercel.app/" target="_blank" class="text-decoration-none">
+            <div class="card project-card">
+              <img src="weather.png" alt="Project 1">
+              <div class="description" style="color: white;">
+                <h5>Weather Update</h5>
+                <p>Checks real-time weather updates in Iligan City.</p>
               </div>
-            </a>
-          </div>
-          <!-- proj 2 -->
-          <div class="col">
-            <a href="https://joannatalitod2005.github.io/contact_form/" target="_blank" class="text-decoration-none">
-              <div class="card project-card">
-                <img src="contact.png" alt="Project 2">
-                <div class="description" style="color: white;">
-                  <h5>Contact Form</h5>
-                  <p>A user-friendly form to gather customer inquiries.</p>
-                </div>
+            </div>
+          </a>
+        </div>
+        <!--proj_2-->
+        <div class="col">
+          <a href="https://joannatalitod2005.github.io/contact_form/" target="_blank" class="text-decoration-none">
+            <div class="card project-card">
+              <img src="contact.png" alt="Project 2">
+              <div class="description" style="color: white;">
+                <h5>Contact Form</h5>
+                <p>A user-friendly form to gather customer inquiries.</p>
               </div>
-            </a>
-          </div>
-          <!-- proj 3 -->
-          <div class="col">
-            <a href="https://joannatalitod2005.github.io/midterm/" target="_blank" class="text-decoration-none">
-              <div class="card project-card">
-                <img src="ecommerce.png" alt="Project 3">
-                <div class="description" style="color: white;">
-                  <h5>E-commerce Dashboard</h5>
-                  <p>Manage products and orders efficiently.</p>
-                </div>
+            </div>
+          </a>
+        </div>
+        <!--proj_3-->
+        <div class="col">
+          <a href="https://joannatalitod2005.github.io/midterm/" target="_blank" class="text-decoration-none">
+            <div class="card project-card">
+              <img src="ecommerce.png" alt="Project 3">
+              <div class="description" style="color: white;">
+                <h5>E-commerce Dashboard</h5>
+                <p>Manage products and orders efficiently.</p>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-    <!--contact-->
-  <section>
-    <div id="contact" class="container mt-5">
-      <h1 class="text-center mb-4">Contact Me</h1>
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-4">
-          <form id="contact-form" class="p-4 border rounded shadow">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name:</label>
-              <input type="text" id="name" name="name" class="form-control" required />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email:</label>
-              <input type="email" id="email" name="email" class="form-control" required />
-            </div>
-            <div class="mb-3">
-              <label for="subject" class="form-label">Subject:</label>
-              <input type="text" id="subject" name="subject" class="form-control" required />
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message:</label>
-              <textarea id="message" name="message" class="form-control" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Send Message</button>
-          </form>
-          <div class="response mt-3 text-center" style="display: none;">Thank you for your message!</div>
-        </div>
+<section>
+  <!--contact-->
+  <div id="contact" class="container mt-5">
+    <h1 class="text-center display-4 fw-bold mb-5" style="color: black;">Contact</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <form id="contact-form" class="p-4 border rounded shadow">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message:</label>
+            <textarea id="message" name="message" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        </form>
+        <div class="response mt-3 text-center" style="display: none;">Thank you for your message!</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-    <footer class="footer" style="text-align: center;  color: white;">
-      <p>&copy; 2024 Joanna Del D. Talitod | All Rights Reserved.</p>
-    </footer>
-    <script src="app.js"></script>
-  </body>
-  </html>
+<!--footr-->
+  <footer class="footer" style="text-align: center;  color: black;">
+    <p>&copy; 2024 Joanna Del D. Talitod | All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/joanna.talitod" target="_blank" class="mx-3 text-decoration-none">
+        <i class="fab fa-facebook fa-2x"></i>
+      </a>
+      <a href="https://www.instagram.com/wantootre/" target="_blank" class="mx-3 text-decoration-none">
+        <i class="fab fa-instagram fa-2x"></i>
+      </a>
+      <a href="https://discord.com/channels/@me" target="_blank" class="mx-3 text-decoration-none">
+        <i class="fab fa-discord fa-2x"></i>
+      </a>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
