@@ -1,17 +1,163 @@
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <!-- Front of the Card -->
-    <div class="flip-card-front">
-      <!-- Add your image for Project 1 here -->
-      <img src="weather.png" alt="Weather Update">
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1 with Flip Card</title>
+  <style>
+    
+    /* Centering container */
+    .cards-container {
+      display: flex;
+      justify-content: center; /* Horizontally align cards */
+      align-items: center; /* Vertically center cards (if needed) */
+      gap: 20px; /* Add spacing between cards */
+      flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    }
 
-    <!-- Back of the Card -->
-    <div class="flip-card-back">
-      <p class="title">Weather Update</p>
-      <p class="description">Checks real-time weather updates in Iligan City.</p>
-      <!-- You can add more details about the project or a link to the project here -->
-    </div>
-  </div>
-</div>
+    .flip-card {
+      background-color: transparent;
+      width: 250px; 
+      height: 250px;
+      perspective: 1000px;
+      align-items: center;
+    }
 
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 150px;
+    }
+
+    .description {
+      font-size: 20px;
+      color: black;
+      position: absolute;
+      text-align: center;
+      padding-bottom: 40px;
+      left: 0;
+      right: 0;
+      padding: 10px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      padding: 10px;
+    }
+
+    .flip-card-front {
+      background-color: rgb(43, 90, 124);    
+    }
+
+    .flip-card-back {
+      background-color: rgb(43, 90, 124);
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flip-card img {
+      width: 100%; 
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .flip-card-back button {
+      background-color: black;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      width: 100px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+      margin-top: -20px; 
+    }
+
+    .flip-card-back button:hover {
+      background-color: rgb(43, 90, 124);
+    }
+
+  </style>
+</head>
+<body>
+
+    <div class="cards-container">
+        <!-- Project 1 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="weather.png" alt="Weather Update">
+            </div>
+            <div class="flip-card-back">
+              <p class="title">Weather Update</p>
+              <p class="description">Checks real-time weather updates in Iligan City.</p>
+              <button onclick="window.open('https://weather-update-ur62-7tcxl79t9-joannas-projects-65cffc7a.vercel.app/', '_blank')">
+                Visit Project
+              </button>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Project 2 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="contact.png" alt="Contact Form">
+            </div>
+            <div class="flip-card-back">
+              <p class="title">Contact Form</p>
+              <p class="description">A user-friendly form to gather customer inquiries.</p>
+              <button onclick="window.open('https://joannatalitod2005.github.io/contact_form/', '_blank')">
+                Visit Project
+              </button>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Project 3 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="ecommerce.png" alt="E-commerce Dashboard">
+            </div>
+            <div class="flip-card-back">
+              <p class="title">E-commerce Dashboard</p>
+              <p class="description">Manage products and orders efficiently.</p>
+              <button onclick="window.open('https://joannatalitod2005.github.io/midterm/', '_blank')">
+                Visit Project
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>
