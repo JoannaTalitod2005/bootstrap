@@ -3,7 +3,7 @@
 })();
 
 document.getElementById("contact-form").addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault();
 
   emailjs.sendForm("service_fce1boh", "template_6qjtyp8", this).then(
     function () {

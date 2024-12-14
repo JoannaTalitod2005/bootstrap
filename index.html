@@ -47,6 +47,7 @@
     section:nth-of-type(2) {
       background-color: #1A1A1A;
     }
+
     section:nth-of-type(3) {
       background-color: #333333;
     }
@@ -85,7 +86,7 @@
       font-weight: bolder;
       position: relative; 
       top: -20%; 
-      padding-left: 50%; 
+      padding-left: 30%; 
     }
 
     .port {
@@ -136,7 +137,6 @@
       margin-bottom: 10%;
       padding-left: 30%;
       margin-top: 10px;
-      border: 4px solid rgb(43, 90, 124);  
       background-color: rgb(43, 90, 124); 
       padding: 30px;
       border-top-left-radius: 80px;
@@ -160,49 +160,169 @@
       height: auto;
     }
 
-    /*projects*/
-    .project-card {
-      width: 100%; 
-      height: 300px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease-in-out;
-      border: 3px solid black;
+    /*skillz*/
+    @keyframes progressAnimation {
+      from {
+        width: 0%;
+      }
+      to {
+        width: var(--progress);
+      }
     }
 
-    .project-card img {
+    .progress-bar {
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+    }
+
+    .progress-bar.html {
+      --progress: 60%;
+      animation-name: progressAnimation;
+    }
+
+    .progress-bar.css {
+      --progress: 50%;
+      animation-name: progressAnimation;
+    }
+
+    .progress-bar.js {
+      --progress: 30%;
+      animation-name: progressAnimation;
+    }
+
+    .progress-bar.java {
+      --progress: 70%;
+      animation-name: progressAnimation;
+    }
+
+    .progress-bar.sql {
+      --progress: 30%;
+      animation-name: progressAnimation;
+    }
+
+    .progress-bar.c {
+      --progress: 15%;
+      animation-name: progressAnimation;
+    }
+
+    .progress-bar.communication {
+      --progress: 50%;
+      animation-name: progressAnimation;
+    }
+
+    .progress-bar.teamwork {
+      --progress: 70%;
+      animation-name: progressAnimation;
+    }
+
+    .progress-bar.problem-solving {
+      --progress: 65%;
+      animation-name: progressAnimation;
+    }
+
+    .progress-bar.time-management {
+      --progress: 50%;
+      animation-name: progressAnimation;
+    }
+
+
+    /*projects*/
+    .projects-box {
+      background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white box */
+      border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for styling */
+      border-radius: 15px; /* Rounded corners for a modern look */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .flip-card {
+      flex: 0 0 300px;
+      height: 250px;
+      perspective: 1000px;
+      align-items: center;
+    }
+
+
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 150px;
+    }
+
+    .description {
+      font-size: 20px;
+      color: black;
+      position: absolute;
+      text-align: center;
+      padding-bottom: 40px;
+      left: 0;
+      right: 0;
+      padding: 10px;
+    }
+
+    .flip-card-inner {
+      position: relative;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
     }
 
-    .project-card .description {
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: rgb(1, 1, 1);
-      padding: 10px;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
 
-    .project-card:hover .description {
-      opacity: 1;
+    .flip-card-front {
+      background-color: rgb(43, 90, 124);    
     }
 
-    .my-projects-container {
-      background-color:white;
-      border: 0px;
-      padding: 30px;
-      border-radius: 12px;
+    .flip-card-back {
+      background-color: rgb(43, 90, 124);
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    .my-projects {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 30px;
+    .flip-card img {
+      width: 100%; 
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .flip-card-back button {
+      background-color: white;
+      color: black;
+      padding: 6px 12px;
+      border: none;
+      width: 100px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+      margin-top: -10px; 
+    }
+  
+    .flip-card-back button:hover {
+      background-color: rgb(43, 90, 124);
     }
 
     /*contact*/
@@ -220,14 +340,16 @@
       margin-top: 20px;
     }
 
-    /*footr*/
+    .social-icons {
+      padding-top: 30px
+    }
     .social-icons a {
       color: black;
       transition: color 0.3s ease;
     }
 
     .social-icons a:hover {
-      color: #2b5a7c;
+      color: white;
     }
 
   </style>
@@ -314,19 +436,19 @@
           <div class="mb-3">
             <small class="d-block">HTML</small>
             <div class="progress h-20">
-              <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar html" role="progressbar" style="width: 0%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="mb-3">
             <small class="d-block">CSS</small>
             <div class="progress h-20">
-              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar css" role="progressbar" style="width: 0%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="mb-3">
             <small class="d-block">JavaScript</small>
             <div class="progress h-20">
-              <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar js" role="progressbar" style="width: 0%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
         </div>
@@ -339,50 +461,50 @@
           <div class="mb-3">
             <small class="d-block">Java</small>
             <div class="progress h-20">
-              <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar java" role="progressbar" style="width: 0%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="mb-3">
             <small class="d-block">SQL</small>
             <div class="progress h-20">
-              <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar sql" role="progressbar" style="width: 0%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="mb-3">
             <small class="d-block">C</small>
             <div class="progress h-20">
-              <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar c" role="progressbar" style="width: 0%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!--skillz-->
+      <!--soft_skills-->
       <div class="col-md-4">
         <div class="p-4 border rounded shadow bg-light">
           <h2 class="text-center mb-4" style="color: #2b5a7c;">Soft Skills</h2>
           <div class="mb-3">
             <small class="d-block">Communication</small>
             <div class="progress h-20">
-              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar communication" role="progressbar" style="width: 0%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="mb-3">
             <small class="d-block">Teamwork</small>
             <div class="progress h-20">
-              <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar teamwork" role="progressbar" style="width: 0%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="mb-3">
             <small class="d-block">Problem Solving</small>
             <div class="progress h-20">
-              <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar problem-solving" role="progressbar" style="width: 0%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="mb-3">
             <small class="d-block">Time Management</small>
             <div class="progress h-20">
-              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar time-management" role="progressbar" style="width: 0%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
         </div>
@@ -396,42 +518,55 @@
   <div id="projects" class="container py-5">
     <h1 class="text-center display-4 fw-bold mb-5" style="color: white;">Projects</h1>
     <div class="my-projects-container">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <!--proj_1-->
-        <div class="col">
-          <a href="https://weather-update-ur62-7tcxl79t9-joannas-projects-65cffc7a.vercel.app/" target="_blank" class="text-decoration-none">
-            <div class="card project-card">
-              <img src="weather.png" alt="Project 1">
-              <div class="description" style="color: white;">
-                <h5>Weather Update</h5>
-                <p>Checks real-time weather updates in Iligan City.</p>
+      <div class="projects-box p-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" style="align-items: center; justify-content: center;">
+          <!--proj1-->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="weather.png" alt="Weather Update">
+              </div>
+              <div class="flip-card-back">
+                <p class="title">Weather Update</p>
+                <p class="description">Checks real-time weather updates in Iligan City.</p>
+                <button onclick="window.open('https://weather-update-ur62-7tcxl79t9-joannas-projects-65cffc7a.vercel.app/', '_blank')">
+                  Visit Project
+                </button>
               </div>
             </div>
-          </a>
-        </div>
-        <!--proj_2-->
-        <div class="col">
-          <a href="https://joannatalitod2005.github.io/contact_form/" target="_blank" class="text-decoration-none">
-            <div class="card project-card">
-              <img src="contact.png" alt="Project 2">
-              <div class="description" style="color: white;">
-                <h5>Contact Form</h5>
-                <p>A user-friendly form to gather customer inquiries.</p>
+          </div>
+    
+          <!--proj2-->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="contact.png" alt="Contact Form">
+              </div>
+              <div class="flip-card-back">
+                <p class="title">Contact Form</p>
+                <p class="description">A user-friendly form to gather customer inquiries.</p>
+                <button onclick="window.open('https://joannatalitod2005.github.io/contact_form/', '_blank')">
+                  Visit Project
+                </button>
               </div>
             </div>
-          </a>
-        </div>
-        <!--proj_3-->
-        <div class="col">
-          <a href="https://joannatalitod2005.github.io/midterm/" target="_blank" class="text-decoration-none">
-            <div class="card project-card">
-              <img src="ecommerce.png" alt="Project 3">
-              <div class="description" style="color: white;">
-                <h5>E-commerce Dashboard</h5>
-                <p>Manage products and orders efficiently.</p>
+          </div>
+    
+          <!--proj3-->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="ecommerce.png" alt="E-commerce Dashboard">
+              </div>
+              <div class="flip-card-back">
+                <p class="title">E-commerce</p>
+                <p class="description">Manage products and orders efficiently.</p>
+                <button onclick="window.open('https://joannatalitod2005.github.io/midterm/', '_blank')">
+                  Visit Project
+                </button>
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -463,23 +598,25 @@
       </div>
     </div>
   </div>
+
+  <div class="social-icons">
+    <a href="https://www.facebook.com/joanna.talitod" target="_blank" class="mx-3 text-decoration-none">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+    <a href="https://www.instagram.com/wantootre/" target="_blank" class="mx-3 text-decoration-none">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+    <a href="https://discord.com/channels/@me" target="_blank" class="mx-3 text-decoration-none">
+      <i class="fab fa-discord fa-2x"></i>
+    </a>
+  </div>
 </section>
 
 <!--footr-->
   <footer class="footer" style="text-align: center;  color: black;">
     <p>&copy; 2024 Joanna Del D. Talitod | All Rights Reserved.</p>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/joanna.talitod" target="_blank" class="mx-3 text-decoration-none">
-        <i class="fab fa-facebook fa-2x"></i>
-      </a>
-      <a href="https://www.instagram.com/wantootre/" target="_blank" class="mx-3 text-decoration-none">
-        <i class="fab fa-instagram fa-2x"></i>
-      </a>
-      <a href="https://discord.com/channels/@me" target="_blank" class="mx-3 text-decoration-none">
-        <i class="fab fa-discord fa-2x"></i>
-      </a>
-    </div>
   </footer>
+  
   <script src="app.js"></script>
 </body>
 </html>
